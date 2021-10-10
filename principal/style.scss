@@ -1,0 +1,297 @@
+body{
+    background-color: rgb(26, 25, 25);
+ /*   background-image: url(https://www.wallpaperuse.com/wallp/48-485898_m.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; */
+    
+}
+h1{
+    color: greenyellow;
+}
+h3{
+  color: greenyellow;
+}
+h4{
+  color: rgb(146, 1, 1);
+}
+.container{
+    width: 1000px;
+    
+    display: grid;
+  
+    width: 90%;
+    //Using auto-fill and auto-fit
+    grid-template-rows: repeat(2, minmax(150px, min-content));
+    grid-template-columns: repeat(auto-fill,100px);
+    grid-template-columns: repeat(auto-fit,100px);
+    grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+  
+    grid-auto-rows: 150px;
+    
+    .item{
+      padding: 10px;
+      color: white;
+      font-family: sans-serif;
+      font-size: 30px;
+      background-color: orangered;
+      
+      &--1{background-color: rgb(90, 0, 0)}
+      &--2{background-color: rgb(23, 99, 0)}
+      &--3{background-color: rgb(0, 85, 76)}
+      &--4{background-color: rgb(102, 1, 85)}
+      &--5{background-color: rgb(143, 64, 208) }
+      &--6{background-color: rgb(72, 0, 165)}
+      &--7{background-color: rgb(199, 20, 20)}
+      &--8{background-color: rgb(139, 163, 2)}
+      &--9{background-color: rgb(0, 116, 124)}
+
+     }
+    
+   }
+
+
+
+
+
+
+
+
+
+
+
+/*footer*/
+
+
+   body {
+    margin: 2rem;
+    box-sizing: border-box;
+    font-family: "Barlow Semi Condensed", sans-serif;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+    outline: none;
+  }
+  /* ---------------------- SETUP above - aesthetics only */
+  $header2-font: 1.3rem;
+  $font-size: 1.1rem;
+  $hover-color: greenyellow;
+  $opacity: 0.85;
+  $padding: 2rem;
+  $primary-color: rgb(0, 0, 0);
+  $primary-column: 55%;
+  $radius: 5px;
+  $secondary-color: white;
+  
+  // link styling defaults
+  a {
+    color: $secondary-color;
+  
+    &:active,
+    &:focus,
+    &:hover {
+      color: $hover-color;
+    }
+  }
+  
+  h2 {
+    color: $hover-color;
+    font-size: $header2-font;
+    margin: 5px auto;
+    text-transform: uppercase;
+  }
+  p,
+  address {
+    color: $secondary-color;
+    font-weight: 300;
+  }
+  
+  // style footer element
+  .footer-wrapper {
+    background-color: $primary-color;
+    // border: $secondary-color 1px solid;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas:
+      "section-1"
+      "section-2"
+      "section-3"
+      "social"
+      "copyright";
+    grid-template-columns: fit-content;
+    justify-items: stretch;
+    max-height: min-content;
+    width: inherit;
+  
+    @media screen and (min-width: 600px) {
+      grid-template-areas:
+        "section-1 section-1"
+        "section-2 section-3"
+        "copyright social";
+    }
+  
+    @media screen and (min-width: 1200px) {
+      grid-template-areas:
+        "section-1 section-2 section-3"
+        "copyright social social";
+    }
+  
+    div[class^="section"] {
+      font-size: $font-size;
+    }
+  
+    & > div {
+      // border: 1px dashed white;
+      padding: 1rem;
+      text-align: center;
+    }
+  
+    .section-1 {
+      grid-area: section-1;
+  
+      @media screen and (min-width: 600px) {
+        text-align: left;
+      }
+    }
+  
+    .section-2 {
+      grid-area: section-2;
+  
+      @media screen and (min-width: 600px) {
+        text-align: left;
+      }
+  
+      @media screen and (min-width: 1200px) {
+        text-align: center;
+      }
+    }
+  
+    .section-3 {
+      grid-area: section-3;
+  
+      @media screen and (min-width: 600px) {
+        text-align: left;
+      }
+  
+      @media screen and (min-width: 1200px) {
+        text-align: right;
+      }
+    }
+  
+    .social {
+      grid-area: social;
+    }
+  
+    .copyright {
+      grid-area: copyright;
+  
+      @media screen and (min-width: 600px) {
+        text-align: left;
+      }
+    }
+  }
+  
+  ul {
+    list-style: none;
+    margin-top: 0;
+    padding-left: 0;
+  
+    li.link {
+      display: block;
+    }
+  }
+  
+  .social-group {
+    align-items: center;
+    display: grid;
+    grid-auto-rows: minmax(30px, 1fr);
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(30px, max-content));
+    justify-content: center;
+    // justify-items: center;
+    list-style: none;
+    margin: auto;
+    padding: 0;
+  
+    @media screen and (min-width: 600px) {
+      justify-content: right;
+    }
+  
+    .social-item {
+      font-size: 0.5rem;
+    }
+  }
+  
+  .copyright > sub > span {
+    color: white;
+  }
+  .copyright > sub {
+    color: darken($hover-color, 10%);
+  }
+
+
+
+  
+
+  
+
+  /*boton animado que da vuelta*/
+  $speed: 0.5s;
+
+.btn-flip{
+	opacity: 1;
+	outline: 0;
+	color: #fff;
+	line-height: 40px;
+	position: relative;
+	text-align: center;
+	letter-spacing: 1px;
+	display: inline-block;
+	text-decoration: none;
+	font-family: 'Open Sans';
+	text-transform: uppercase;
+	
+	&:hover{
+		
+		&:after{
+			opacity: 1;
+			transform: translateY(0) rotateX(0);
+		}
+		
+		&:before{
+			opacity: 0;
+			transform: translateY(50%) rotateX(90deg);
+		}
+	}
+	
+	&:after{
+		top: 0;
+		left: 0;
+		opacity: 0;
+		width: 100%;
+		color: #2bff00;
+		display: block;
+		transition: $speed;
+		position: absolute;
+		background: #141414;
+		content: attr(data-back);
+		transform: translateY(-50%) rotateX(90deg);
+	}
+	
+	&:before{
+		top: 0;
+		left: 0;
+		opacity: 1;
+		color: #40ff00;
+		display: block;
+		padding: 0 30px;
+		line-height: 40px;
+		transition: $speed;
+		position: relative;
+		background: #0e0e0e;
+		content: attr(data-front);
+		transform: translateY(0) rotateX(0);
+	}
+}

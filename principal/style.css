@@ -1,0 +1,331 @@
+body {
+  background-color: #1a1919;
+  /*   background-image: url(https://www.wallpaperuse.com/wallp/48-485898_m.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; */
+}
+
+h1 {
+  color: greenyellow;
+}
+
+h3 {
+  color: greenyellow;
+}
+
+h4 {
+  color: #920101;
+}
+
+.container {
+  width: 1000px;
+  display: -ms-grid;
+  display: grid;
+  width: 90%;
+  -ms-grid-rows: (minmax(150px, min-content))[2];
+      grid-template-rows: repeat(2, minmax(150px, -webkit-min-content));
+      grid-template-rows: repeat(2, minmax(150px, min-content));
+  -ms-grid-columns: (100px)[auto-fill];
+      grid-template-columns: repeat(auto-fill, 100px);
+  -ms-grid-columns: (100px)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 100px);
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 150px;
+}
+
+.container .item {
+  padding: 10px;
+  color: white;
+  font-family: sans-serif;
+  font-size: 30px;
+  background-color: orangered;
+}
+
+.container .item--1 {
+  background-color: #5a0000;
+}
+
+.container .item--2 {
+  background-color: #176300;
+}
+
+.container .item--3 {
+  background-color: #00554c;
+}
+
+.container .item--4 {
+  background-color: #660155;
+}
+
+.container .item--5 {
+  background-color: #8f40d0;
+}
+
+.container .item--6 {
+  background-color: #4800a5;
+}
+
+.container .item--7 {
+  background-color: #c71414;
+}
+
+.container .item--8 {
+  background-color: #8ba302;
+}
+
+.container .item--9 {
+  background-color: #00747c;
+}
+
+/*footer*/
+body {
+  margin: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  outline: none;
+}
+
+/* ---------------------- SETUP above - aesthetics only */
+a {
+  color: white;
+}
+
+a:active, a:focus, a:hover {
+  color: greenyellow;
+}
+
+h2 {
+  color: greenyellow;
+  font-size: 1.3rem;
+  margin: 5px auto;
+  text-transform: uppercase;
+}
+
+p,
+address {
+  color: white;
+  font-weight: 300;
+}
+
+.footer-wrapper {
+  background-color: black;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 10px;
+      grid-template-areas: "section-1" "section-2" "section-3" "social" "copyright";
+  -ms-grid-columns: fit-content;
+      grid-template-columns: -webkit-fit-content;
+      grid-template-columns: fit-content;
+  justify-items: stretch;
+  max-height: -webkit-min-content;
+  max-height: -moz-min-content;
+  max-height: min-content;
+  width: inherit;
+}
+
+@media screen and (min-width: 600px) {
+  .footer-wrapper {
+        grid-template-areas: "section-1 section-1" "section-2 section-3" "copyright social";
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer-wrapper {
+        grid-template-areas: "section-1 section-2 section-3" "copyright social social";
+  }
+}
+
+.footer-wrapper div[class^="section"] {
+  font-size: 1.1rem;
+}
+
+.footer-wrapper > div {
+  padding: 1rem;
+  text-align: center;
+}
+
+.footer-wrapper .section-1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: section-1;
+}
+
+@media screen and (min-width: 600px) {
+  .footer-wrapper .section-1 {
+    text-align: left;
+  }
+}
+
+.footer-wrapper .section-2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: section-2;
+}
+
+@media screen and (min-width: 600px) {
+  .footer-wrapper .section-2 {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer-wrapper .section-2 {
+    text-align: center;
+  }
+}
+
+.footer-wrapper .section-3 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: section-3;
+}
+
+@media screen and (min-width: 600px) {
+  .footer-wrapper .section-3 {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer-wrapper .section-3 {
+    text-align: right;
+  }
+}
+
+.footer-wrapper .social {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: social;
+}
+
+.footer-wrapper .copyright {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: copyright;
+}
+
+@media screen and (min-width: 600px) {
+  .footer-wrapper .copyright {
+    text-align: left;
+  }
+}
+
+ul {
+  list-style: none;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+ul li.link {
+  display: block;
+}
+
+.social-group {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: minmax(30px, 1fr);
+  grid-gap: 1rem;
+  -ms-grid-columns: (minmax(30px, max-content))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(30px, -webkit-max-content));
+      grid-template-columns: repeat(auto-fit, minmax(30px, max-content));
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+  margin: auto;
+  padding: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .social-group {
+    -webkit-box-pack: right;
+        -ms-flex-pack: right;
+            justify-content: right;
+  }
+}
+
+.social-group .social-item {
+  font-size: 0.5rem;
+}
+
+.copyright > sub > span {
+  color: white;
+}
+
+.copyright > sub {
+  color: #98fb00;
+}
+
+/*boton animado que da vuelta*/
+.btn-flip {
+  opacity: 1;
+  outline: 0;
+  color: #fff;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Open Sans';
+  text-transform: uppercase;
+}
+
+.btn-flip:hover:after {
+  opacity: 1;
+  -webkit-transform: translateY(0) rotateX(0);
+          transform: translateY(0) rotateX(0);
+}
+
+.btn-flip:hover:before {
+  opacity: 0;
+  -webkit-transform: translateY(50%) rotateX(90deg);
+          transform: translateY(50%) rotateX(90deg);
+}
+
+.btn-flip:after {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  color: #2bff00;
+  display: block;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: absolute;
+  background: #141414;
+  content: attr(data-back);
+  -webkit-transform: translateY(-50%) rotateX(90deg);
+          transform: translateY(-50%) rotateX(90deg);
+}
+
+.btn-flip:before {
+  top: 0;
+  left: 0;
+  opacity: 1;
+  color: #40ff00;
+  display: block;
+  padding: 0 30px;
+  line-height: 40px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: relative;
+  background: #0e0e0e;
+  content: attr(data-front);
+  -webkit-transform: translateY(0) rotateX(0);
+          transform: translateY(0) rotateX(0);
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,122 @@
+<link rel="stylesheet" href="shodan-css/style.scss">
+<link rel="stylesheet" href="shodan-css/style.css">
+
+<html color-mode="dark">
+    <title>Shodan Busquedas</title>
+
+<body>
+  <div class="wrapper">
+    <header class="main-head">
+      <h1>Usando Shodan</h1>
+    </header>
+    <div class="head-widgets">
+      <form>
+        <div class="description">
+          Dark mode
+        </div>
+        <div class="switch">
+          <input type="radio" id="on" name="status" value="on" checked>
+          <label for="on">On</label>
+          <input type="radio" id="off" name="status" value="off">
+          <label for="off">Off</label>
+          <span class="toggle-outside"><span class="toggle-inside"></span></span>
+        </div>
+      </form>
+    </div>
+    <article class="content">
+      <h1>Busquedas con Shodan</h1>
+   <img src="https://i.3djuegos.com/juegos/12601/system_shock_3/fotos/maestras/system_shock_3-4966958.jpg" alt="shodan" width="100%">
+      <p>Comandos de Ubicación <br><br>
+
+        Los comandos “country”, “state” y “city”, permiten acortar por ubicación geográfica las búsquedas. <br><br> Por ejemplo; “country:US”, “state:LA”, “city:Denver”, “postal:12345”.
+        
+        Utilizando cualquiera de estos filtros es factible buscar dispositivos por ubicación geográfica. También siendo factible combinar filtros individuales si se requiere.
+        
+        </p>
+      <blockquote>Comandos de Red <br><br>
+
+        Los comandos “org”, “net”, “hostname” y “port” permiten acortar las búsquedas 
+        utilizando filtros basados en red. <br><br> “org” busca organizaciones individuales por nombre,
+         “net” busca por direcciones IP individuales o un rango completo de red. “hostname” permite escanear
+          Internet completa por dominios individuales, se puede utilizar parte del FDQN, como “bing” o el sitio 
+          web completo como “www. sony. com”. “port” busca sistemas por puertos abiertos. Por ejemplo; “org:Bing”,
+           “net:192.168.0.50”, “hostname:sony.com”, “port:3309”
+        
+        </blockquote>
+          
+          Comandos de Página Web <br> <br>
+
+Los filtros “title” y “html” permiten acortar las búsquedas utilizando los filtros basados en páginas web. El filtro “title” es probablemente uno de los parámetros de búsqueda más obviados. Se puede escanear Internet completo o un dominio completo buscando por palabras clave en el título. El filtro “html” permite escanear por una palabra específica o cadena en el código html de la página web.
+
+
+        <blockquote>
+          Comandos de Página Web
+
+Los filtros “title” y “html” permiten acortar las búsquedas utilizando los filtros basados en páginas web. El filtro “title” es probablemente uno de los parámetros de búsqueda más obviados. Se puede escanear Internet completo o un dominio completo buscando por palabras clave en el título. El filtro “html” permite escanear por una palabra específica o cadena en el código html de la página web.
+
+
+        </blockquote>
+
+      <h2>Use dark UIs: </h2>
+
+      <ul>
+        <li>When a branding color scheme warrants it</li>
+        <li>When the design is sparse and minimalist with only a few content types</li>
+        <li>When it is appropriate for the context and use, such as nighttime entertainment apps</li>
+        <li>To reduce eye strain, such as analytics pages that are used for long periods of time</li>
+        <li>To elicit an emotion—for example, a feeling of intrigue and mystery</li>
+        <li>To create a striking, dramatic look</li>
+        <li>To create a sense of luxury and prestige</li>
+        <li>To support visual hierarchy</li>
+      </ul>
+    </article>
+    <aside class="side">
+      <h2>Metasploit con Shodan</h2>
+
+      <p>Comandos y Api Keys Externas</p>
+      <h2>Comandos a usar : </h2>
+      <img src="https://www.ceos3c.com/wp-content/uploads/2018/12/Information-Gathering-With-Metasploit-Shodan-02.png" alt="shodan" width="100%">
+
+      <p>Read about <a href="https://material.io/design/color/the-color-system.html#color-theme-creation" target="_blank">Theming</a> and the <a href="https://material.io/design/color/dark-theme.html" target="_blank">Dark theme</a> on <a href="https://material.io/" target="_blank">Material Design</a>.</p>
+      <p>Special thanks to Ryan Feigenbaum for his excellent article on <a href="https://ryanfeigenbaum.com/dark-mode/" target="_blank">Dark Mode Toggle</a>.</p>
+
+      <p>Cheers to Nick Bottomley
+        for his pen on <a href="https://codepen.io/nickbottomley/pen/uhfmn" target="_blank">On-Off Switches</a>.</p>
+    </aside>
+    <footer class="main-footer"><p style="text-align:center">Made with love by Elissavet Triantafyllopoulou for the CodePen Challenge <a href="https://codepen.io/challenges/2021/april/3" target="blank">Build a Pen with a good on/off microinteraction</a>.</p>
+      <p style="text-align:center">Thank you for visiting!</p>
+</footer>
+  </div>
+  <script>
+      // If CSS Custom Properties or Variables are supported
+if (window.CSS && CSS.supports("color", "var(--primary)")) {
+    const radios = document.querySelectorAll('input[type="radio"]');
+  
+    const toggleColorMode = function toggleColorMode(e) {
+      //console.log(e.currentTarget.value);
+      // Switch to Light Mode
+      if (e.currentTarget.value === "on") {
+        // Sets the custom html attribute
+        document.documentElement.setAttribute("color-mode", "dark");
+        // Sets the user's preference in local storage
+        localStorage.setItem("color-mode", "dark");
+        return;
+      }
+      /* Switch to Light Mode */
+      document.documentElement.setAttribute("color-mode", "light");
+      localStorage.setItem("color-mode", "light");
+    };
+  
+    radios.forEach(function (radio) {
+      radio.addEventListener("click", toggleColorMode);
+    });
+  } else {
+    //hide the switcher
+    const switcherContainer = document.querySelectorAll(".head-widgets")[0];
+    switcherContainer.style.display = "none";
+  }
+  </script>
+</body>
+
+
+</html>

@@ -1,0 +1,447 @@
+
+/* side menu */
+.wui-side-menu {
+  position:fixed;
+  top:0;
+  left:0;
+  width:220px;
+  height:100%;
+  backface-visibility:hidden;
+  z-index:3;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);  
+  -webkit-transition: webkit-transform 220ms ease-in-out;
+  transition: transform 220ms ease-in-out;
+}
+.wui-side-menu.open {-webkit-transform: translateX(0);transform: translateX(0);} 
+.wui-side-menu.open ~ .content .side-menu-trigger {display:none;}
+.wui-side-menu.open {box-shadow: 2px 0 16px 0 rgb(0, 0, 0);}
+.wui-side-menu .header, 
+.wui-content-header {vertical-align:baseline;line-height:50px;}
+.wui-side-menu-pin-trigger, 
+    .wui-side-menu-trigger {width:50px;height:50px;text-align:center;display: inline-block;font-size:18px;line-height: 50px;}
+
+.wui-side-menu .wui-side-menu-pin-trigger    {display:none;float: right;}
+.wui-side-menu .wui-side-menu-pin-trigger i  {-webkit-transition:all 0.22s ease-out;-moz-transition:all 0.22s ease-out;
+                                                      -o-transition:all 0.22s ease-out;     transition:all 0.22s ease-out;}
+.wui-side-menu .wui-side-menu-items {overflow-y:auto;height: calc(100% - 50px);}
+.wui-side-menu .wui-side-menu-item {
+   display:block;
+   width:100%;
+   padding:15px 12px ;
+   border-left:5px solid transparent;
+}
+.wui-side-menu .wui-side-menu-item {height:50px}
+.wui-side-menu .wui-side-menu-item i.box-ico {margin-right:4px;}
+
+/* overlay */
+.wui-overlay {position:absolute;top:0;left:0;right:0;bottom:0;z-index:2;background-color: rgba(0, 0, 0, 0.1);opacity:0.5;display:none;}
+.wui-side-menu.open ~ .wui-overlay, .wui-overlay.active {display:block;} 
+
+/* content */
+.wui-content {z-index:1;position:absolute;top:0;right:0;bottom:0;left:0;
+             -webkit-transition:all 0.22s ease-out;-moz-transition:all 0.22s ease-out;
+             -o-transition:all 0.22s ease-out;transition:all 0.22s ease-out;padding:0 10px;}
+.wui-content .wui-side-menu-trigger {margin-left:-10px;}
+@media only screen and (min-width:768px){
+    .wui-side-menu .wui-side-menu-pin-trigger {display:inline-block;} 
+    .wui-side-menu.open {box-shadow: initial;}
+    .wui-side-menu.open ~ .wui-overlay {display:none;} 
+    .wui-side-menu.open ~ .wui-content .wui-side-menu-trigger {display:none;} 
+    .wui-side-menu.open:not(.pinned) ~ .wui-overlay {display:block;}
+    .wui-side-menu.open:not(.pinned) {box-shadow: 2px 0 16px 0 rgba(0,0,0,0.3);}
+    .wui-side-menu.open.pinned ~ .wui-content {left:220px;}
+}
+ul.wui-side-menu-items {list-style: none;padding:0}
+
+.wui-side-menu {background-color: #000000;color:#ddd;/*barra lateral color de fondo*/}
+.wui-side-menu .wui-side-menu-trigger:hover,
+.wui-side-menu-item:hover,
+.wui-side-menu-pin-trigger:hover
+    {color: rgb(0, 0, 0);background-color: rgb(109, 174, 11);}
+
+.wui-side-menu a 
+ {color:#ccc;text-decoration:none}
+.wui-side-menu .wui-side-menu-item.active
+    {border-left-color: #158439; color:#158439}
+.wui-content a {color:#000;}
+
+
+/* demo */
+body {margin:0; font-family:'arial';font-weight:100;}
+*, *:after, *:before {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+#events {background-color:#ccc;}
+
+
+
+
+
+
+
+/*cards*/
+
+
+.cards-list {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+
+}
+
+.card .card_image {
+  width: inherit;
+  height: inherit;
+}
+
+.card .card_image img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+}
+
+.card .card_title {
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: -80px;
+  height: 40px;
+}
+
+.card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 1px 1px 1px 1px rgb(43, 255, 0), -5px -5px 30px 7px rgb(30, 255, 0);
+
+}
+
+.title-white {
+  color: white;
+}
+
+.title-black {
+  color: black;
+}
+
+@media all and (max-width: 500px) {
+  .card-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+
+
+/*
+.card {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+  background-image: url('https://i.redd.it/b3esnz5ra34y.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  transition: 0.4s;
+}
+*/
+
+
+/*letras de codigod el editor*/
+
+.fakeButtons {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  position: relative;
+  top: 6px;
+  left: 6px;
+  background-color: #ff3b47;
+  border-color: #9d252b;
+  display: inline-block;
+}
+
+.fakeMinimize {
+  left: 11px;
+  background-color: #ffc100;
+  border-color: #9d802c;
+}
+
+.fakeZoom {
+  left: 16px;
+  background-color: #00d742;
+  border-color: #049931;
+}
+
+.fakeMenu {
+  width: 90%;
+  box-sizing: border-box;
+  height: 25px;
+  background-color: rgb(0, 0, 0);
+  margin: 0 auto;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.fakeScreen {
+  background-color: #00000082;
+  box-sizing: border-box;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+p {
+  position: relative;
+  left: 55%;
+  margin-left: -8.5em;
+  text-align: left;
+  font-size: 1.25em;
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+span {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+.line1 {
+  color: #9CD9F0;
+  -webkit-animation: type .5s 1s steps(20, end) forwards;
+  -moz-animation: type .5s 1s steps(20, end) forwards;
+  -o-animation: type .5s 1s steps(20, end) forwards;
+  animation: type .5s 1s steps(20, end) forwards;
+}
+
+.cursor1 {
+  -webkit-animation: blink 1s 2s 2 forwards;
+  -moz-animation: blink 1s 2s 2 forwards;
+  -o-animation: blink 1s 2s 2 forwards;
+  animation: blink 1s 2s 2 forwards;
+}
+
+.line2 {
+  color: #CDEE69;
+  -webkit-animation: type .5s 4.25s steps(20, end) forwards;
+  -moz-animation: type .5s 4.25s steps(20, end) forwards;
+  -o-animation: type .5s 4.25s steps(20, end) forwards;
+  animation: type .5s 4.25s steps(20, end) forwards;
+}
+
+.cursor2 {
+  -webkit-animation: blink 1s 5.25s 2 forwards;
+  -moz-animation: blink 1s 5.25s 2 forwards;
+  -o-animation: blink 1s 5.25s 2 forwards;
+  animation: blink 1s 5.25s 2 forwards;
+}
+
+.line3 {
+  color: #E09690;
+  -webkit-animation: type .5s 7.5s steps(20, end) forwards;
+  -moz-animation: type .5s 7.5s steps(20, end) forwards;
+  -o-animation: type .5s 7.5s steps(20, end) forwards;
+  animation: type .5s 7.5s steps(20, end) forwards;
+}
+
+.cursor3 {
+  -webkit-animation: blink 1s 8.5s 2 forwards;
+  -moz-animation: blink 1s 8.5s 2 forwards;
+  -o-animation: blink 1s 8.5s 2 forwards;
+  animation: blink 1s 8.5s 2 forwards;
+}
+
+.line4 {
+  color: rgb(94, 255, 0);
+  -webkit-animation: type .5s 10.75s steps(20, end) forwards;
+  -moz-animation: type .5s 10.75s steps(20, end) forwards;
+  -o-animation: type .5s 10.75s steps(20, end) forwards;
+  animation: type .5s 10.75s steps(20, end) forwards;
+}
+
+.cursor4 {
+  -webkit-animation: blink 2s 11.5s infinite;
+  -moz-animation: blink 2s 8.5s infinite;
+  -o-animation: blink 2s 8.5s infinite;
+  animation: blink 2s 8.5s infinite;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes type {
+  to {
+    width: 17em;
+  }
+}
+
+@-moz-keyframes type {
+  to {
+    width: 17em;
+  }
+}
+
+@-o-keyframes type {
+  to {
+    width: 17em;
+  }
+}
+
+@keyframes type {
+  to {
+    width: 17em;
+  }
+}
+
+
+/*botones de juegos*/
+
+.button {
+  display: inline-block;
+  padding: 20px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #000000;
+  border: none;
+  border-radius: 100px 1px 1000px;
+  box-shadow: 0 9px rgb(18, 19, 18);
+}
+
+.button:hover {background-color: #111111}
+
+.button:active {
+  background-color: #2fca00;
+  box-shadow: 0 5px rgb(0, 82, 4);
+  transform: translateY(4px);
+}
+
+
+
+
+/*CALL OUT*/
+.callout {
+  position: fixed;
+  bottom: 35px;
+  right: 20px;
+  margin-left: 20px;
+  max-width: 300px;
+  border: solid 1px greenyellow;
+}
+
+.callout-header {
+  padding: 25px 15px;
+  background: rgb(29, 29, 29);
+  font-size: 12px;
+  color: white;
+}
+
+.callout-container {
+  padding: 15px;
+  background-color: rgb(0, 0, 0);
+  color: black
+}
+
+.closebtn {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  color: rgb(255, 0, 0);
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.closebtn:hover {
+  color: lightgrey;
+}
+
+/*Boton animado donaciones*/
+

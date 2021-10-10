@@ -1,0 +1,104 @@
+<link rel="stylesheet" href="ipv4css/ipv4.scss">
+<link rel="stylesheet" href="ipv4css/ipv4css">
+<nav>
+    <em>Hacker &rAarr; </em>
+ 
+    <div class="theme-switch-wrapper">
+         <label class="theme-switch" for="checkbox">
+      <input type="checkbox" id="checkbox" />
+      <div class="slider round"></div>
+    </label>
+    </div>
+  
+  </nav>  
+  <section>
+      <article class="post">
+        <h1>SUBNETEO</h1>
+        <h3>Subneteando la red tendremos, en su conjunto, una sola Direccion IP divida en varias subredes más
+          pequeñas perfectamente diferenciadas, consiguiendo un mayor control y reduciendo el 
+          congestionamiento por los broadcasts. A continuación, se ofrecen una serie de conceptos 
+          relacionados a este proceso de Subneteo.
+          </h3>
+      <h3>
+         <br>
+     
+      ¿Por qué realizar un Subneteo? <br><br>
+      Cuando trabajamos con una red pequeña no encontramos muchos problemas para configurar el 
+      rango de direcciones IPv4 para conseguir un rendimiento óptimo. <br><br>
+      puede ser corregido, en parte, segmentando la red con switches, reduciendo los Dominios de colisión 
+      (host que comparten el mismo medio) enviando las tramas solo al segmento correcto. <br><br>
+      Pero aunque se reducen las colisiones con tomar estas medidas, si se continúa aumentando el 
+      número de host, aumentan también los envíos de broadcast (Envió de paquetes a todos los 
+      dispositivos de la red). <br><br> Lo que afecta considerablemente el desempeño de la red. <br><br> Esto se debe a que 
+      los Switches solo segmentan a nivel de MAC Address y los envíos de broadcast son a nivel de red 
+      255.255.255.255.
+      ¡¡Es aquí donde el Subneteo nos ayuda!!
+      
+     
+     </h3>
+
+     <br>
+     <h1>Todo desde un router</h1>
+     <h3>
+        interface GigabitEthernet0/0 <br> <br>
+        description CONEXION CON RED LAN DEL CLIENTE <br><br>
+        
+        interface GigabitEthernet0/0.10 <br>
+        encapsulation dot1q 10 <br>
+        ip address 223.18.20.30 255.255.255.224 <br><br>
+        <br><br>        
+        interface GigabitEthernet0/0.20 <br>
+        encapsulation dot1q 20 <br>
+        ip address 223.18.20.62 255.255.255.224<br>
+        <br><br>
+        interface GigabitEthernet0/0.30<br>
+        encapsulation dot1q 30<br>
+        ip address 223.18.20.94 255.255.255.224<br>
+        <br><br>
+        interface GigabitEthernet0/0.40<br>
+        encapsulation dot1q 40<br>
+        ip address 223.18.20.94 255.255.255.224<br>
+        <br><br>
+        interface GigabitEthernet0/0.50<br>
+        encapsulation dot1q 50<br>
+        ip address 223.18.20.126 255.255.255.224<br>
+        <br><br>
+        interface GigabitEthernet0/0.60<br>
+        encapsulation dot1q 60<br>
+        ip address 223.18.20.158 255.255.255.224<br>
+        <br><br>
+     </h3>
+
+
+        <a href="http://www.udb.edu.sv/udb_files/recursos_guias/informatica-tecnologico/redes-de-comunicacion/2020/i/guia-6.pdf">VER PDF DEL SUBNETEO </a>
+    </article>
+  </section>
+
+<script>
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+    }
+}
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    }
+    else {        document.documentElement.setAttribute('data-theme', 'light');
+          localStorage.setItem('theme', 'light');
+    }    
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
+
+
+
+
+</script>
